@@ -1,6 +1,9 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"time"
+)
 
 func main() {
 	//testString01()
@@ -9,7 +12,11 @@ func main() {
 
 	map01 := testMap01(nil)
 	for k, v := range map01["user"] {
-		fmt.Println(k,v)
+		fmt.Println(k, v)
+	}
+	for {
+		time.Sleep(time.Second * 20)
+		fmt.Println(123)
 	}
 }
 
@@ -22,23 +29,24 @@ func testString01() {
 	fmt.Println("s2:", s2)
 }
 
-func testRune() (string) {
+func testRune() string {
 	str := `hello world`
 	sile01 := []rune(str)
 	sile01[0] = '啊'
 	str = string(sile01)
+
 	return str
 }
 
-func testMap01(a map[string]map[string]string) (map[string]map[string]string) {
+func testMap01(a map[string]map[string]string) map[string]map[string]string {
 	userMap, ok := a["user"]
 	if ok {
-		userMap["name"] = `liming  if`
+		userMap["name"] = `  if`
 	} else {
-		a =make(map[string]map[string]string)
+		a = make(map[string]map[string]string)
 		a["user"] = make(map[string]string)
-		a ["user"]["name"] = `liming else`
-		a ["user"]["password"] = `pwd else`
+		a["user"]["name"] = ` else`
+		a["user"]["password"] = `pwd else`
 	}
 	return a
 }
