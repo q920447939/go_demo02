@@ -7,7 +7,7 @@ type SecKillController struct {
 }
 
 func (p *SecKillController) SecKill() {
-	//
+	//123
 	p.Data["json"] = "SecKill"
 	p.ServeJSON()
 }
